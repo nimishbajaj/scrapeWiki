@@ -4,7 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 tqdm.pandas()
 
-titles = pd.read_csv("/Users/nimishbajaj/PycharmProjects/scrapeWiki/political_topics_l1.csv")
+titles = pd.read_csv("./political_topics_l1.csv")
 print(titles.head())
 # titles = titles.head(2)
 
@@ -20,6 +20,6 @@ titles["text"] = titles.progress_apply(lambda row: get_wiki_text(row.title), axi
 
 print(titles.head())
 
-titles.to_csv(f"/Users/nimishbajaj/PycharmProjects/scrapeWiki/titles_with_text_{time.time()}.csv", index=False)
+titles.to_csv(f"./titles_with_text_{time.time()}.csv", index=False)
 
 
